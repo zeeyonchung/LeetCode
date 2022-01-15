@@ -3,11 +3,7 @@ class Solution {
         Set<Integer> set = new HashSet<>();
         int k = 0, r = 0;
         
-        while (true) {
-            if (set.contains(n)) {
-                return false;
-            }
-            
+        while (set.add(n)) {
             set.add(n);
             k = 0;
             
@@ -23,5 +19,7 @@ class Solution {
             
             n = k;
         }
+        
+        return false;
     }
 }
