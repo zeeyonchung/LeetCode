@@ -1,6 +1,7 @@
 class Solution {
     public boolean isHappy(int n) {
         Set<Integer> set = new HashSet<>();
+        int k = 0, r = 0;
         
         while (true) {
             if (set.contains(n)) {
@@ -8,10 +9,11 @@ class Solution {
             }
             
             set.add(n);
-            int k = 0;
+            k = 0;
             
             while (n > 0) {
-                k += (n % 10) * (n % 10);
+                r = n % 10;
+                k += r * r;
                 n /= 10;
             }
             
